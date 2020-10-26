@@ -1,0 +1,348 @@
+$color-primary-color: #f1cdb3;
+$color-primary-light: #fddcc4;
+
+$color-light-s: #fafafa;
+$color-light-l: #f6f6f6;
+$color-light-xl: #ffffff;
+
+$color-dark-s: #cdcdcd;
+$color-dark-m: #b2b2b2;
+$color-dark-3xl: #292929;
+$color-dark-2xl: #444444;
+$color-dark-l: #545454;
+$color-dark-xl: #4c4c4c;
+
+$start-screen-gradient-background: url(../../assets/fon-footer.png), 
+radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+$footer-gradient-background: url(../../assets/fon-footer.png), 
+radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+
+:root{
+    font-size: 10px;
+}
+  
+ *{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+
+ @mixin h2 {
+    font: {
+        family: Georgia;
+        size: 4.4rem;
+        weight: 400;
+    }
+    line-height: 130%;
+}
+
+
+@mixin h3 {
+    font: {
+        family: Georgia;
+        size: 3.5rem;
+        style: normal;
+        weight: normal;
+    }
+    line-height: 130%;
+    letter-spacing: 0.21rem;
+}
+
+@mixin h4 {
+    font: {
+        family: Georgia;
+        size: 2rem;
+        style: normal;
+        weight: normal;
+    }
+    line-height: 110%;
+    letter-spacing: 0.09rem;
+}
+
+@mixin h5 {
+    font: {
+        family: Georgia;
+        style: normal;
+        weight: normal;
+        size: 1.5rem;
+    }
+    line-height: 115%;
+    letter-spacing: 0.06rem;
+}
+
+@mixin paragraph-l {
+    font: {
+        family: Arial;
+        style: normal;
+        weight: normal;
+        size: 1.5rem;
+    }
+    line-height: 160%;
+}
+
+@mixin paragraph-s {
+    font: {
+        family: Arial;
+        style: italic;
+        weight: normal;
+        size: 1.2rem;
+    }
+    line-height: 150%;
+}
+
+@mixin logo_title {
+    font: {
+        family: Georgia;
+        style: normal;
+        weight: normal;
+        size: 3.2rem;
+    }
+    line-height: 110%;
+    letter-spacing: 0.192rem;
+}
+
+@mixin logo_subtitle {
+    font: {
+        family: Arial;
+        style: normal;
+        weight: normal;
+        size: 1.3rem;
+    }
+    letter-spacing: 0.13rem;
+}
+
+@mixin slider_button{
+    transition-duration: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    box-shadow: inset 0 0 0 0.3rem $color-primary-color;
+    border-radius: 100%;
+    padding: 1.9rem;
+    background: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    &:hover{
+        box-shadow: none;
+        background-color: $color-primary-light;
+    }
+}
+
+@mixin button {
+    transition-duration: 0.5s;
+    padding: 1.5rem 4.5rem;
+    font-size: 1.7rem;
+    font-family: Georgia;
+    letter-spacing: 0.102rem;
+    border-radius: 10rem;
+    line-height: 130%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+@mixin button-primary(){
+    background-color: $color-primary-color;
+    
+    @include button();
+    &:hover{
+        background-color: $color-primary-light;
+    }
+}
+
+@mixin button-secondary{
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px $color-primary-color;
+    @include button();
+    &:hover{
+        box-shadow: none;
+        background-color: $color-primary-light;
+    }
+}
+
+
+
+.pets-headerp {
+    position: fixed;
+    display: flex;
+    align-items: center;    
+    width: 100vw;
+    max-width: 100%;
+    min-height: 12rem;
+    z-index: 2;
+    background-color: white;
+}
+
+.menu{
+    display: flex;
+    width: 44.3rem;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    &_titlep{
+        color: $color-dark-l;
+        @include logo_title();
+    }
+
+    &_subtitlep{
+        margin-top: 1rem;
+        text-align: center;
+        color: $color-dark-3xl;
+        @include logo_subtitle();
+    }
+}
+
+
+.list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+
+    &_item {
+        display: flex;
+        align-items: center;
+        @include paragraph-l();
+    }
+    &_linkp{
+        color: $color-dark-l;
+        font-family: Arial;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 160%;
+    
+
+        &_active{
+            border-bottom: solid 0.3rem $color-primary-color;
+            color: $color-dark-3xl;
+
+        }
+        &_disabled{
+            color: $color-dark-l;
+        }
+    }
+}
+.pets{
+    padding-top: 20rem !important;
+}
+.pets_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0rem !important;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 3.1rem;
+
+    &_it{
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.9rem;
+        margin: 0;
+        background-color: $color-light-s;
+        cursor: pointer;
+        
+        &:hover{
+            box-shadow: 0 0.2rem 3.5rem 1.4rem rgba(13,13,13, 0.04);
+        }
+    }
+
+    &_image{
+        border-radius: 9px 9px 0px 0px;
+    }
+
+
+    
+
+    
+}
+
+.friends__pagination{
+    display: flex;
+    flex-direction: row;
+    .pagination__button2{
+        @include button-primary();
+        width: 52px;
+        height: 52px;
+        margin: 0 2rem;
+        padding: 0;
+    }
+    .pagination__button3{
+    @include button-secondary();
+    margin: 0 2rem;
+    padding: 1.5rem 1.5rem;
+    }
+
+    .pagination__button1{
+        @include button-secondary();
+        width: 52px;
+        height: 52px;
+        margin: 0 2rem;
+        padding: 1.5rem 2.5rem;
+    }
+
+}
+
+
+@media (max-width: 768px){
+    .pets_card_item-delete{
+        display: none;
+    width: 0;
+    margin: 0 !important;
+    padding: 0;
+        .pets_card_content{
+            visibility: hidden;
+    width: 0;
+    margin: 0 !important;
+    padding: 0!important;
+        }
+    }
+}
+
+
+@media (max-width: 610px) {
+    .pets_card_item-delete2, .pets_card_item-delete2{
+       
+           display: none;
+            width: 0;
+            margin: 0 !important;
+            padding: 0;
+                .pets_card_content{
+                    visibility: hidden;
+            width: 0;
+            margin: 0 !important;
+            padding: 0!important;
+                }
+            
+    }
+    .pets_content{
+        align-items: center;
+        display: flex;
+    }
+    .pagination__button3{
+        margin: 0 1rem;
+        width: 32px;
+        height: 32px;
+
+    }
+    .pagination__button2{
+        margin: 0 1rem;
+        width: 32px;
+        height: 32px;
+    }
+    .pagination__button1{
+        margin: 0 1rem;
+        width: 32px;
+        height: 32px;
+    }
+}
